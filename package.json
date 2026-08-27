@@ -1,0 +1,24 @@
+{
+  "name": "fullstack-brain-bucket",
+  "version": "1.0.0",
+  "description": "**As a user** of a US state selection UI\r **I want** an improved interface\r **So That** I can select states with fewer steps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haydenknight88/fullstack-brain-bucket.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/haydenknight88/fullstack-brain-bucket/issues"
+  },
+  "homepage": "https://github.com/haydenknight88/fullstack-brain-bucket#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

@@ -1,0 +1,119 @@
+/* Base typography */
+body {
+    font-family: "SUSE Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+    line-height: 1.45;
+    color: #1b1b1b;
+}
+
+.search-bar {
+    max-width: 720px;
+    margin: 0.6rem auto;
+}
+
+.col-auto.px-0>img,
+.img-card img {
+    display: block;
+    width: 320px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+}
+
+.img-card {
+    background: #fff;
+    padding: 6px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.col.d-flex.align-items-start>ul {
+    margin-left: 1rem;
+    padding-left: 1rem;
+    line-height: 1.5;
+}
+
+.state-btn {
+    padding: 0.28rem 0.45rem;
+    font-size: 0.86rem;
+    line-height: 1.15;
+    transition: transform .08s ease, box-shadow .12s ease, background-color .12s;
+    white-space: normal;
+    min-height: 36px;
+}
+
+.state-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 .18rem rgba(13, 110, 253, 0.16);
+}
+
+.state-btn.btn-primary {
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.08);
+}
+
+.state-btn:active {
+    transform: translateY(1px) scale(.998);
+}
+
+#statesGrid {
+    margin-top: .5rem;
+}
+
+#statesGrid .col-6 {
+    margin-bottom: 0.35rem;
+}
+
+@media (max-width: 576px) {
+
+    .col-auto.px-0>img,
+    .img-card img {
+        width: 48%;
+    }
+
+    .state-btn {
+        font-size: 0.82rem;
+        min-height: 34px;
+        padding: 0.22rem 0.35rem;
+    }
+}
+
+.state-btn.small {
+    font-size: 0.78rem;
+    padding: 0.18rem 0.28rem;
+    min-height: 30px;
+}
+
+
+
+
+.search-bar {
+    max-width: 1000px;
+    margin: 0.6rem auto;
+}
+
+.col-auto.px-0>img,
+.img-card img {
+    display: block;
+    width: 200px;
+    max-width: 50%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+}
+
+.col.d-flex.align-items-start>ul {
+    margin-left: 1rem;
+    padding-left: 1rem;
+    line-height: 1.5;
+}
+
+
+
+@media (max-width: 576px) {
+
+    .col-auto.px-0>img,
+    .img-card img {
+        width: 48%;
+    }
+}
