@@ -1,33 +1,72 @@
-# Project Delta
+# APP NAME
+> US State Prototype
 
-## Dev Server
-- https://golf-render-knight.onrender.com
+### authorship + version
 
-## This project was made to improve the US state selector on devices with a text-based and grid UI.
+`@haydenknight88` \| `2026-09-15` \| `GOLF`
 
-## User Story
-**As a user** of a US state selection UI
-**I want** an improved interface
-**So That** I can select states with fewer steps
+### deployments, codebase, & repo features 
 
-## Validation Links
-https://validator.w3.org/nu/?doc=https%3A%2F%2Fhaydenknight88.github.io%2Fmusical-funicular-delta%2F
-https://wave.webaim.org/report#/https://haydenknight88.github.io/musical-funicular-delta/
+  resource                     link
+  ---------------------------- ----------------------
+  PROD codebase                [`main`](https://github.com/haydenknight88/fullstack-brain-bucket)
+  PROD server                  [GCP](https://console.cloud.google.com/compute/instances?project=fullstack-brain-bucket-507518)
+  DEV codebase                 [`dev`](https://github.com/haydenknight88/fullstack-brain-bucket/tree/dev)
+  DEV server                   [Render](https://golf-render-knight.onrender.com
+)
+  docs                         [`docs/`](URL)
+  published docs               [GitHub Pages](URL)
+  CI/CD workflow               [`deploy.yml`](https://github.com/haydenknight88/fullstack-brain-bucket/tree/main/.github/workflows)
+  successful PROD deployment   [GitHub Action](URL)
+  resolved GOLF issue          [issue \#](https://github.com/haydenknight88/fullstack-brain-bucket/issues/1)
 
-## Infrastructure and Architecture
-- HTML
-- JS
-- CSS
+### user story
 
-## Attribution
-- W3CSchools
-- Bootstrap
-- Google Font: SUSE MONO
-- AI: Chatgpt mini 5
+- **As a** upcoming full-stack developer,
+- **I want** a CI/CD infrastructure
+- **so that** I can develop locally, manage my code in GitHub, and
+    automatically deploy changes to DEV and PROD environments.
 
-## Permalinks
-try/catch issue: https://github.com/haydenknight88/musical-funicular-delta/issues/1#issue-3635221134
+### narrative
 
-text-based UI: https://github.com/haydenknight88/musical-funicular-delta/issues/2#issue-3635237243
+For GOLF, I used Project Delta from ITE 376 which is an improved user interface that explored for a simpler way to select states instead of drop down boxes. 
 
+### architecture
 
+``` text
+LOCAL
+  │
+  ▼
+GitHub
+  │
+  ├── dev  ──► Render ─────────► DEV
+  │
+  └── main ──► GitHub Actions ─► GCP ──► PROD
+```
+
+### stack
+
+`HTML/CSS/JS` \| `Node.js` \| `Express` \| `Git/GitHub` \| `Render` \|
+`GCP` \| `Linux` \| `Nginx` \| `PM2` \| `Certbot` \| `GitHub Actions`
+
+### project structure
+
+Use `tree` to show your actual project structure.
+
+``` text
+repo/
+├── .github/
+│   └── workflows/
+├── docs/
+│   └── README.md
+├── public/
+├── server/
+├── .gitignore
+└── ...
+```
+
+### GCP
+
+external IP: `34.19.146.154`\
+Linux user: `haydenknight888`\
+instructor SSH public key installed: `yes`
