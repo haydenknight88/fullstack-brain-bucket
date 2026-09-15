@@ -31,7 +31,7 @@ GOLF README
 
 ### narrative
 
-For GOLF, I used Project Delta from ITE 376 which is an improved user interface that explored for a simpler way to select states instead of drop down boxes. 
+For GOLF, I used Project Delta from ITE 376 which is an improved user interface that explored for a simpler way to select states instead of drop down boxes. I use a CI/CD infrastructure that allows me to directly push to DEV and PROD enviroments.
 
 ### architecture
 
