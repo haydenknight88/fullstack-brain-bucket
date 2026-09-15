@@ -24,22 +24,18 @@ jobs:
           ssh-keyscan -H "34.19.146.154" >> ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
 
-          
-
-                - name: Check SSH key
+      - name: Check SSH key
         shell: bash
         run: |
           ssh-keygen -y -f ~/.ssh/deploy_key > /tmp/deploy_key.pub
           ssh-keygen -lf /tmp/deploy_key.pub
-
-          
 
       - name: Deploy over SSH
         shell: bash
         env:
           SSH_USER: haydenknight888 #${{ secrets.SSH_USER }}
           SSH_HOST: 34.19.146.154 #${{ secrets.SSH_HOST }}
-          APP_DIR:  fullstack-brain-bucket/server # ${{ vars.APP_DIR }}
+          APP_DIR: fullstack-brain-bucket/server # ${{ vars.APP_DIR }}
           PM2_NAME: app # ${{ vars.PM2_NAME }}
         run: |
           ssh -i ~/.ssh/deploy_key -T "$SSH_USER@$SSH_HOST" <<EOF
