@@ -1,4 +1,3 @@
-```yaml
 name: re-deploy-main-to-gcp.yml
 
 on:
@@ -11,12 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Prepare SSH
+      - name: Deploy over SSH
         shell: bash
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_KEY_PASSPHRASE: ${{ secrets.SSH_KEY_PASSPHRASE }}
+          SSH_USER: haydenknight888
+          SSH_HOST: 34.19.146.154
+          APP_DIR: fullstack-brain-bucket/server
+          PM2_NAME: app
         run: |
+          set -e
+
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
 
@@ -24,21 +29,11 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
 
           eval "$(ssh-agent -s)"
-
           printf '%s\n' "$SSH_KEY_PASSPHRASE" | ssh-add ~/.ssh/deploy_key
 
-          ssh-keyscan -H "34.19.146.154" >> ~/.ssh/known_hosts
-          chmod 644 ~/.ssh/known_hosts
+          ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
 
-      - name: Deploy over SSH
-        shell: bash
-        env:
-          SSH_USER: haydenknight888
-          SSH_HOST: 34.19.146.154
-          APP_DIR: fullstack-brain-bucket/server
-          PM2_NAME: app
-        run: |
-          ssh -T "$SSH_USER@$SSH_HOST" <<EOF
+          ssh "$SSH_USER@$SSH_HOST" <<EOF
             set -e
 
             cd "$APP_DIR"
@@ -50,4 +45,3 @@ jobs:
 
             pm2 save
           EOF
-```
