@@ -19,7 +19,7 @@ GOLF README
   docs                         [`docs/`](docs                         [`docs/`](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/docs/README.md))
   published docs               [GitHub Pages](https://haydenknight88.github.io/fullstack-brain-bucket/)
   CI/CD workflow               [`deploy.yml`](https://github.com/haydenknight88/fullstack-brain-bucket/tree/main/.github/workflows)
-  successful PROD deployment   [GitHub Action](URL)
+  successful PROD deployment   [GitHub Action]([URL](https://github.com/haydenknight88/fullstack-brain-bucket/actions/runs/35009652356))
   resolved GOLF issue          [issue \#](https://github.com/haydenknight88/fullstack-brain-bucket/issues/1)
 
 
