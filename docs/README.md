@@ -16,11 +16,13 @@ GOLF README
   DEV codebase                 [`dev`](https://github.com/haydenknight88/fullstack-brain-bucket/tree/dev)
   DEV server                   [Render](https://golf-render-knight.onrender.com
 )
-  docs                         [`docs/`](URL)
-  published docs               [GitHub Pages](URL)
+  docs                         [`docs/`](docs                         [`docs/`](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/docs/README.md))
+  published docs               [GitHub Pages](https://haydenknight88.github.io/fullstack-brain-bucket/)
   CI/CD workflow               [`deploy.yml`](https://github.com/haydenknight88/fullstack-brain-bucket/tree/main/.github/workflows)
   successful PROD deployment   [GitHub Action](URL)
   resolved GOLF issue          [issue \#](https://github.com/haydenknight88/fullstack-brain-bucket/issues/1)
+
+
 
 ### user story
 
