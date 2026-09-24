@@ -57,6 +57,37 @@ app.get('/api/hello', function(req, res) {
   }
 );
 
+async function sendData() {
+
+  const student = {
+    name: 'Lasagna',
+    major: 'CIS'
+  };
+
+  const response =
+    await fetch(
+      '/api/students',
+      {
+        method:
+          'POST',
+        headers: {
+          'Content-Type':
+            'application/json'
+        },
+        body:
+          JSON.stringify(
+            student
+          )
+      }
+    );
+
+  const data =
+    await response.json();
+
+  console.log(data);
+
+}
+
 app.post(
   '/api/students',
   function(req, res) {
