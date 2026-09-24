@@ -4,6 +4,7 @@
   "description": "**As a user** of a US state selection UI\r **I want** an improved interface\r **So That** I can select states with fewer steps",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,8 @@
   },
   "homepage": "https://github.com/haydenknight88/fullstack-brain-bucket#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "dotenv": "^18.0.3",
+    "express": "^5.2.1",
+    "mongodb": "^7.6.0"
   }
 }
