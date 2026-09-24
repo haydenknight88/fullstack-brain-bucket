@@ -57,6 +57,19 @@ app.get('/api/hello', function(req, res) {
   }
 );
 
+app.post(
+  '/api/students',
+  function(req, res) {
+    console.log(
+      req.body
+    );
+    res.json({
+      received:
+        req.body
+    });
+  }
+);
+
 app.listen(5500, () => {
   console.log('Server is running on http://localhost:5500')
 })
