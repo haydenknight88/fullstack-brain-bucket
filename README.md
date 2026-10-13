@@ -10,21 +10,21 @@ HOTEL README
 ### deployments, codebase, & repo features 
 | requirement | evidence |
 |---|---|
-| MongoDB connection | [server code](URL) |
-| GET all | [endpoint code](URL) |
-| GET one | [endpoint code](URL) |
-| filtered GET | [endpoint code](URL) |
-| POST / create | [endpoint code](URL) |
-| PATCH / update | [endpoint code](URL) |
-| DELETE | [endpoint code](URL) |
-| frontend `fetch()` | [client code](URL) |
-| persistent CRUD | [PROD app](URL) |
-| HOTEL milestone | [milestone](URL) |
-| example issue | [issue #](URL) |
-| development branch | [branch](URL) |
-| feature → dev | [PR #](URL) |
+| MongoDB connection | [server code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L19-L40) |
+| GET all | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L66-L82) |
+| GET one | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L84-L102) |
+| filtered GET | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L69-L70) |
+| POST / create | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L113-L128) |
+| PATCH / update | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L144-L179) |
+| DELETE | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L182-L212) |
+| frontend `fetch()` | [client code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/public/hotel.html#L32-L393) |
+| persistent CRUD | [PROD app](https://hayden.barrycumbie.com) |
+| HOTEL milestone | [milestone](https://github.com/haydenknight88/fullstack-brain-bucket/milestone/1) |
+| example issue | [issue #](https://github.com/haydenknight88/fullstack-brain-bucket/issues/6) |
+| development branch | [branch](https://github.com/haydenknight88/fullstack-brain-bucket/tree/dev) |
+| feature → dev | [PR #](https://github.com/haydenknight88/fullstack-brain-bucket/pull/9) |
 | dev → main | [PR #](URL) |
-| PROD deployment | [GitHub Action](URL) |
+| PROD deployment | [GitHub Action](https://github.com/haydenknight88/fullstack-brain-bucket/actions/runs/38473724708) |
 
 
 ### deployments, codebase, & repo features 
