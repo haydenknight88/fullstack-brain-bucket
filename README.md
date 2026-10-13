@@ -1,33 +1,85 @@
-# Project Delta
+HOTEL README
 
-## Dev Server
-- https://golf-render-knight.onrender.com
+# APP NAME
+> US State Prototype
 
-## This project was made to improve the US state selector on devices with a text-based and grid UI.
+### authorship + version
 
-## User Story
-**As a user** of a US state selection UI
-**I want** an improved interface
-**So That** I can select states with fewer steps
+`@haydenknight88` \| `2026-10-13` \| `HOTEL`
 
-## Validation Links
-https://validator.w3.org/nu/?doc=https%3A%2F%2Fhaydenknight88.github.io%2Fmusical-funicular-delta%2F
-https://wave.webaim.org/report#/https://haydenknight88.github.io/musical-funicular-delta/
+### deployments, codebase, & repo features 
+| requirement | evidence |
+|---|---|
+| MongoDB connection | [server code](URL) |
+| GET all | [endpoint code](URL) |
+| GET one | [endpoint code](URL) |
+| filtered GET | [endpoint code](URL) |
+| POST / create | [endpoint code](URL) |
+| PATCH / update | [endpoint code](URL) |
+| DELETE | [endpoint code](URL) |
+| frontend `fetch()` | [client code](URL) |
+| persistent CRUD | [PROD app](URL) |
+| HOTEL milestone | [milestone](URL) |
+| example issue | [issue #](URL) |
+| development branch | [branch](URL) |
+| feature → dev | [PR #](URL) |
+| dev → main | [PR #](URL) |
+| PROD deployment | [GitHub Action](URL) |
 
-## Infrastructure and Architecture
-- HTML
-- JS
-- CSS
 
-## Attribution
-- W3CSchools
-- Bootstrap
-- Google Font: SUSE MONO
-- AI: Chatgpt mini 5
+### deployments, codebase, & repo features 
+    resource                     link
+  ---------------------------- ----------------------
+  PROD App                [`main`](https://hayden.barrycumbie.com)
+  PROD codebase                [`main`](https://github.com/haydenknight88/fullstack-brain-bucket)
+  PROD server                  [GCP](https://console.cloud.google.com/compute/instances?project=fullstack-brain-bucket-507518)
+  DEV codebase                 [`dev`](https://github.com/haydenknight88/fullstack-brain-bucket/tree/dev)
+  DEV server                   [Render](https://golf-render-knight.onrender.com
+)
+  docs                         [`docs/`](docs                         [`docs/`](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/docs/README.md))
+  published docs               [GitHub Pages](https://haydenknight88.github.io/fullstack-brain-bucket/)
+  CI/CD workflow               [`deploy.yml`](https://github.com/haydenknight88/fullstack-brain-bucket/tree/main/.github/workflows)
+  successful PROD deployment   [GitHub Action]([URL](https://github.com/haydenknight88/fullstack-brain-bucket/actions/runs/35009652356))
+  resolved HOTEL issue          [issue \#]([https://github.com/haydenknight88/fullstack-brain-bucket/issues/1](https://github.com/haydenknight88/fullstack-brain-bucket/issues/6))
+  
 
-## Permalinks
-try/catch issue: https://github.com/haydenknight88/musical-funicular-delta/issues/1#issue-3635221134
+### architecture
 
-text-based UI: https://github.com/haydenknight88/musical-funicular-delta/issues/2#issue-3635237243
+``` text
+LOCAL
+  │
+  ▼
+GitHub
+  │
+  ├── dev  ──► Render ─────────► DEV
+  │
+  ├──client ──► fetch() ──► Express REST API ──► MongoDB Atlas
+  │
+  └── main ──► GitHub Actions ─► GCP ──► PROD
+```
 
+### stack
+
+`HTML/CSS/JS` \| `Node.js` \| `Express` \| `Git/GitHub` \| `Render` \|
+`GCP` \| `Linux` \| `Nginx` \| `PM2` \| `Certbot` \| `GitHub Actions`
+
+### project structure
+
+``` text
+repo/
+├── .github/
+│   └── workflows/
+├── docs/
+│   └── README.md
+├── public/
+├── server/
+├── .gitignore
+└── ...
+```
+
+### GCP
+
+external IP: `34.19.146.154`\
+Linux user: `haydenknight888`\
+instructor SSH public key installed: `yes`
 
