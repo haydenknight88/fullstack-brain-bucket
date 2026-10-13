@@ -25,7 +25,7 @@ HOTEL README
 | example issue | [issue #](https://github.com/haydenknight88/fullstack-brain-bucket/issues/6) |
 | development branch | [branch](https://github.com/haydenknight88/fullstack-brain-bucket/tree/dev) |
 | feature → dev | [PR #](https://github.com/haydenknight88/fullstack-brain-bucket/pull/9) |
-| dev → main | [PR #](URL) |
+| dev → main | [PR #](https://github.com/haydenknight88/fullstack-brain-bucket/pull/10) |
 | PROD deployment | [GitHub Action](https://github.com/haydenknight88/fullstack-brain-bucket/actions/runs/38473724708) |
 | CI/CD Workflow | [CI/CD](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/.github/workflows/deploy-main-to-gcp.yml) |
 
