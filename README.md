@@ -13,7 +13,7 @@ HOTEL README
 | MongoDB connection | [server code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L19-L40)) |
 | GET all | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L66-L82)) |
 | GET one | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L84-L102) |
-| filtered GET | [endpoint code]([URL](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L69-L70)) |
+| filtered GET | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L69-L70) |
 | POST / create | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L113-L128)) |
 | PATCH / update | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L144-L179) |
 | DELETE | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L182-L212) |
