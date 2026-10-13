@@ -1,14 +1,33 @@
-GOLF README
+HOTEL README
 
 # APP NAME
 > US State Prototype
 
 ### authorship + version
 
-`@haydenknight88` \| `2026-09-15` \| `GOLF`
+`@haydenknight88` \| `2026-10-13` \| `HOTEL`
 
 ### deployments, codebase, & repo features 
+| requirement | evidence |
+|---|---|
+| MongoDB connection | [server code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L19-L40)) |
+| GET all | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L66-L82)) |
+| GET one | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L84-L102) |
+| filtered GET | [endpoint code]([URL](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L69-L70)) |
+| POST / create | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L113-L128)) |
+| PATCH / update | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L144-L179) |
+| DELETE | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L182-L212) |
+| frontend `fetch()` | [client code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/public/hotel.html#L32-L393)) |
+| persistent CRUD | [PROD app](https://hayden.barrycumbie.com)) |
+| HOTEL milestone | [milestone](URL) |
+| example issue | [issue #](URL) |
+| development branch | [branch](URL) |
+| feature → dev | [PR #](URL) |
+| dev → main | [PR #](URL) |
+| PROD deployment | [GitHub Action](URL) |
 
+
+### deployments, codebase, & repo features 
     resource                     link
   ---------------------------- ----------------------
   PROD App                [`main`](https://hayden.barrycumbie.com)
@@ -21,20 +40,8 @@ GOLF README
   published docs               [GitHub Pages](https://haydenknight88.github.io/fullstack-brain-bucket/)
   CI/CD workflow               [`deploy.yml`](https://github.com/haydenknight88/fullstack-brain-bucket/tree/main/.github/workflows)
   successful PROD deployment   [GitHub Action]([URL](https://github.com/haydenknight88/fullstack-brain-bucket/actions/runs/35009652356))
-  resolved GOLF issue          [issue \#](https://github.com/haydenknight88/fullstack-brain-bucket/issues/1)
-
-
-
-### user story
-
-- **As a** upcoming full-stack developer,
-- **I want** a CI/CD infrastructure
-- **so that** I can develop locally, manage my code in GitHub, and
-    automatically deploy changes to DEV and PROD environments.
-
-### narrative
-
-For GOLF, I used Project Delta from ITE 376 which is an improved user interface that explored for a simpler way to select states instead of drop down boxes. I use a CI/CD infrastructure that allows me to directly push to DEV and PROD enviroments.
+  resolved HOTEL issue          [issue \#]([https://github.com/haydenknight88/fullstack-brain-bucket/issues/1](https://github.com/haydenknight88/fullstack-brain-bucket/issues/6))
+  
 
 ### architecture
 
@@ -46,6 +53,8 @@ GitHub
   │
   ├── dev  ──► Render ─────────► DEV
   │
+  ├──client ──► fetch() ──► Express REST API ──► MongoDB Atlas
+  │
   └── main ──► GitHub Actions ─► GCP ──► PROD
 ```
 
@@ -55,8 +64,6 @@ GitHub
 `GCP` \| `Linux` \| `Nginx` \| `PM2` \| `Certbot` \| `GitHub Actions`
 
 ### project structure
-
-Use `tree` to show your actual project structure.
 
 ``` text
 repo/
