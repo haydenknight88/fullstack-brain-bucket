@@ -141,4 +141,75 @@ async function startServer() {
   }
 }
 
+// Issue 12: Update an item's category.
+app.patch('/api/items/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+
+    if (!ObjectId.isValid(id)) {
+      return res.status(400).json({
+        error: 'Invalid item ID'
+      });
+    }
+
+    const changes = req.body;
+
+    const result = await app.locals.db
+      .collection('items')
+      .updateOne(
+        { _id: new ObjectId(id) },
+        { $set: changes }
+      );
+
+    if (result.matchedCount === 0) {
+      return res.status(404).json({
+        error: 'Item not found'
+      });
+    }
+
+    res.json(result);
+  } catch (error) {
+    console.error('Error updating item:', error.message);
+    res.status(500).json({
+      error: 'Failed to update item'
+    });
+  }
+
+  
+});
+
+
+ // Issue 13: Delete an item by ID.
+app.delete('/api/items/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+
+    if (!ObjectId.isValid(id)) {
+      return res.status(400).json({
+        error: 'Invalid item ID'
+      });
+    }
+
+    const result = await app.locals.db
+      .collection('items')
+      .deleteOne({
+        _id: new ObjectId(id)
+      });
+
+    if (result.deletedCount === 0) {
+      return res.status(404).json({
+        error: 'Item not found'
+      });
+    }
+
+    res.json(result);
+  } catch (error) {
+    console.error('Error deleting item:', error.message);
+    res.status(500).json({
+      error: 'Failed to delete item'
+    });
+  }
+});
+
+
 startServer();
