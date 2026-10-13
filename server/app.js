@@ -3,7 +3,8 @@ import 'dotenv/config';
 import express from 'express';
 import {
   MongoClient,
-  ServerApiVersion
+  ServerApiVersion,
+  ObjectId
 } from 'mongodb';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
@@ -62,18 +63,67 @@ app.get('/api/hotels', async (req, res) => {
   }
 });
 
-// Professor's "Read All" endpoint.
+// Issue 8: Get all items, optionally filtered by category.
 app.get('/api/items', async (req, res) => {
   try {
+    const category = req.query.category;
+    const filter = category ? { category } : {};
+
     const items = await app.locals.db
       .collection('items')
-      .find({})
+      .find(filter)
       .toArray();
 
     res.json(items);
   } catch (error) {
     console.error('Error fetching items:', error.message);
     res.status(500).json({ error: 'Failed to fetch items' });
+  }
+});
+
+// Issue 9: Get one item by its MongoDB ID.
+app.get('/api/items/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+
+    if (!ObjectId.isValid(id)) {
+      return res.status(400).json({
+        error: 'Invalid item ID'
+      });
+    }
+
+    const item = await app.locals.db
+      .collection('items')
+      .findOne({ _id: new ObjectId(id) });
+
+    if (!item) {
+      return res.status(404).json({
+        error: 'Item not found'
+      });
+    }
+
+    res.json(item);
+  } catch (error) {
+    console.error('Error fetching item:', error.message);
+    res.status(500).json({ error: 'Failed to fetch item' });
+  }
+});
+
+// Issue 11: Create a new item.
+app.post('/api/items', async (req, res) => {
+  try {
+    const result = await app.locals.db
+      .collection('items')
+      .insertOne(req.body);
+
+    res.status(201).json({
+      message: 'Item created successfully',
+      _id: result.insertedId,
+      ...req.body
+    });
+  } catch (error) {
+    console.error('Error creating item:', error.message);
+    res.status(500).json({ error: 'Failed to create item' });
   }
 });
 
