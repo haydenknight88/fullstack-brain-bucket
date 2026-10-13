@@ -18,7 +18,7 @@ HOTEL README
 | PATCH / update | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L144-L179) |
 | DELETE | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L182-L212) |
 | frontend `fetch()` | [client code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/public/hotel.html#L32-L393) |
-| persistent CRUD | [PROD app](https://hayden.barrycumbie.com)) |
+| persistent CRUD | [PROD app](https://hayden.barrycumbie.com) |
 | HOTEL milestone | [milestone](https://github.com/haydenknight88/fullstack-brain-bucket/milestone/1) |
 | example issue | [issue #](https://github.com/haydenknight88/fullstack-brain-bucket/issues/6) |
 | development branch | [branch](https://github.com/haydenknight88/fullstack-brain-bucket/tree/dev) |
