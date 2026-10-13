@@ -26,7 +26,7 @@ HOTEL README
 | feature → dev | [PR #](https://github.com/haydenknight88/fullstack-brain-bucket/pull/9) |
 | dev → main | [PR #](URL) |
 | PROD deployment | [GitHub Action](https://github.com/haydenknight88/fullstack-brain-bucket/actions/runs/38473724708) |
-| CI/CD Workflow | [CI/CD](https://github.com/haydenknight88/fullstack-brain-bucket/tree/main/.github/workflows) |
+| CI/CD Workflow | [CI/CD](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/.github/workflows/deploy-main-to-gcp.yml) |
 
 
 ### deployments, codebase, & repo features 
