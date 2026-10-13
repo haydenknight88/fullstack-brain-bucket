@@ -7,9 +7,10 @@ HOTEL README
 
 `@haydenknight88` \| `2026-10-13` \| `HOTEL`
 
-### deployments, codebase, & repo features 
+### Hotel Dashboard 
 | requirement | evidence |
 |---|---|
+| main branch | [branch](https://github.com/haydenknight88/fullstack-brain-bucket) |
 | MongoDB connection | [server code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L19-L40) |
 | GET all | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L66-L82) |
 | GET one | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L84-L102) |
