@@ -7,9 +7,10 @@ HOTEL README
 
 `@haydenknight88` \| `2026-10-13` \| `HOTEL`
 
-### deployments, codebase, & repo features 
+### Hotel Dashboard 
 | requirement | evidence |
 |---|---|
+| main branch | [branch](https://github.com/haydenknight88/fullstack-brain-bucket) |
 | MongoDB connection | [server code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L19-L40) |
 | GET all | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L66-L82) |
 | GET one | [endpoint code](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/server/app.js#L84-L102) |
@@ -25,23 +26,8 @@ HOTEL README
 | feature → dev | [PR #](https://github.com/haydenknight88/fullstack-brain-bucket/pull/9) |
 | dev → main | [PR #](URL) |
 | PROD deployment | [GitHub Action](https://github.com/haydenknight88/fullstack-brain-bucket/actions/runs/38473724708) |
+| CI/CD Workflow | [CI/CD](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/.github/workflows/deploy-main-to-gcp.yml) |
 
-
-### deployments, codebase, & repo features 
-    resource                     link
-  ---------------------------- ----------------------
-  PROD App                [`main`](https://hayden.barrycumbie.com)
-  PROD codebase                [`main`](https://github.com/haydenknight88/fullstack-brain-bucket)
-  PROD server                  [GCP](https://console.cloud.google.com/compute/instances?project=fullstack-brain-bucket-507518)
-  DEV codebase                 [`dev`](https://github.com/haydenknight88/fullstack-brain-bucket/tree/dev)
-  DEV server                   [Render](https://golf-render-knight.onrender.com
-)
-  docs                         [`docs/`](docs                         [`docs/`](https://github.com/haydenknight88/fullstack-brain-bucket/blob/main/docs/README.md))
-  published docs               [GitHub Pages](https://haydenknight88.github.io/fullstack-brain-bucket/)
-  CI/CD workflow               [`deploy.yml`](https://github.com/haydenknight88/fullstack-brain-bucket/tree/main/.github/workflows)
-  successful PROD deployment   [GitHub Action]([URL](https://github.com/haydenknight88/fullstack-brain-bucket/actions/runs/35009652356))
-  resolved HOTEL issue          [issue \#]([https://github.com/haydenknight88/fullstack-brain-bucket/issues/1](https://github.com/haydenknight88/fullstack-brain-bucket/issues/6))
-  
 
 ### architecture
 
