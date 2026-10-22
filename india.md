@@ -48,3 +48,9 @@
 - Biggest Unknowns: Designing the power score system.
 - Project Links: [backlog](https://github.com/haydenknight88/fullstack-brain-bucket/issues), [milestones](https://github.com/haydenknight88/fullstack-brain-bucket/milestones), [DEV](https://github.com/haydenknight88/fullstack-brain-bucket/tree/dev)
 
+# SPRING 99 -- future
+- Next Users: A wider Marvel fanbase other than my brother.
+- Next Features: A topic system where you can focus on certain Marvel characters and a Marvel team building game using the power system.
+- Next Platform: A full functioning mobile App.
+- Next Scale:A larger character database
+
