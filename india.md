@@ -15,5 +15,6 @@
 
 ## Value Proposition
 - This should exist because it is a fun game but can also be used as a marketing strategy for Marvel             movies/comics
+- For my brother, my application is a fun game because it is replayable and quick form.
 
 
