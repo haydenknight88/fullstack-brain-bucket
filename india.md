@@ -5,10 +5,10 @@
 ## 🦸 Marvel Higher or Lower
 - Project Type: Browser Trivia Game
 - Team: Hayden Knight
-- User Story: As a Brother and Marvel fan, I want to make a higher or lower power level game per request of my   brother, so he can test his marvel knowledge.
-  Target Audience: My Little Brother
+- User Story: As a Brother and Marvel fan, I want to make a higher or lower power level game per request of   my brother, so he can test his marvel knowledge.
+- Target Audience: My Little Brother
 
- # 💡 WHY -- Problem + Value
+# 💡 WHY -- Problem + Value
  
 ## Problem and Oppurtunity
 - I am trying to create a replayable game for my little brother or anyone who is a Marvel fan for a fun way to   learn more about your favorite characters.
@@ -38,6 +38,13 @@
 - What can I borrow/avoid?: I can borrow the official information about the characters while I avoid making   it seem like these are official ratings from Marvels website.
 - Why build another?: This will take the official characters and make comparsion to correctly power scale     them.
 
-  
+# DONE -- Kilo success test
+- To be labeled as done at kilo. I want a fully functional game where you can keep track of your high score   in the Marvel Higher or Lower format.
 
+# PLAN -- project system
+- Starting point: I have the backend complete, no frontend interface.
+- Direction: A fully functional, fun game.
+- Capabilities: Character comparsions, streak-based high score system, and saved data.
+- Biggest Unknowns: Designing the power score system.
+- Project Links: [backlog](https://github.com/haydenknight88/fullstack-brain-bucket/issues), [milestones](https://github.com/haydenknight88/fullstack-brain-bucket/milestones), [DEV](https://github.com/haydenknight88/fullstack-brain-bucket/tree/dev)
 
