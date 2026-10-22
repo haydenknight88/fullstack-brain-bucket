@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-INDIA.MD
+# India 
 
 # WHO -- User + Project
 
