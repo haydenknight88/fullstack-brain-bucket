@@ -2,6 +2,9 @@
 
 # Juliett
 
+### Problem and User
+The main user I targeted was my little brother but I wanted to make it where anyone can play and have fun!
+
 ### Demo Links
 | App | Link |
 |---|---|
