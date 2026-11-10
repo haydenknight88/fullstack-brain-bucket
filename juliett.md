@@ -5,7 +5,7 @@
 ### Demo Links
 | App | Link |
 |---|---|
-| Marvel Higher or Lower | [Link](https://hayden.barrycumbie.com) |
+| Marvel Higher or Lower | [https://hayden.barrycumbie.com] |
 
 <img width="599" height="437" alt="Screenshot 2026-11-10 020746" src="https://github.com/user-attachments/assets/dfde4662-497f-47f1-8987-65bfa9462d05" />
 
