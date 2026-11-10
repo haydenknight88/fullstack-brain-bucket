@@ -13,7 +13,7 @@
 <img width="350" height="280" alt="Screenshot 2026-11-10 020756" src="https://github.com/user-attachments/assets/289d05f2-3e6b-4b0d-8816-8a6c47558308" />
 
 ### Future Plan
-- More Characteers
+- More Characters
 - More Gamemodes
 - Better Interface/Animations
   
