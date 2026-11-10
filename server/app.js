@@ -2,15 +2,15 @@
 import 'dotenv/config';
 import express from 'express';
 import {
-  MongoClient,
-  ServerApiVersion,
-  ObjectId
+    MongoClient,
+    ServerApiVersion
 } from 'mongodb';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
 const app = express();
 
 app.use(express.json());
@@ -19,197 +19,114 @@ app.use(express.static(join(__dirname, '../public')));
 const uri = process.env.MONGO_URI;
 
 if (!uri) {
-  throw new Error('MONGO_URI is missing from .env');
+    throw new Error('MONGO_URI is missing from .env');
 }
 
 const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true
-  }
+    serverApi: {
+        version: ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true
+    }
 });
 
 async function connectMongo() {
-  await client.connect();
-  await client.db('admin').command({ ping: 1 });
+    await client.connect();
+    await client.db('admin').command({ ping: 1 });
 
-  console.log('🏓 pinged MongoDB. connected!');
+    console.log('🏓 pinged MongoDB. connected!');
 
-  app.locals.db = client.db('hotel');
+    app.locals.db = client.db('marvel_game');
 }
 
-// Professor's homepage route, adjusted to serve hotel.html.
+// Serve the Marvel game.
 app.get('/', (req, res) => {
-  res.sendFile(join(__dirname, '../public/hotel.html'));
+    res.sendFile(join(__dirname, '../public/index.html'));
 });
 
-app.get('/whatever', (req, res) => {
-  res.send('Hello World whatever autochange');
-});
+// Retrieve the current high score.
+app.get('/api/highscore', async (req, res) => {
+    try {
+        const highScore = await app.locals.db
+            .collection('highscores')
+            .findOne({ _id: 'marvel-higher-lower' });
 
-// Read all hotel records.
-app.get('/api/hotels', async (req, res) => {
-  try {
-    const hotels = await app.locals.db
-      .collection('hotels')
-      .find({})
-      .toArray();
-
-    res.json(hotels);
-  } catch (error) {
-    console.error('Error fetching hotels:', error.message);
-    res.status(500).json({ error: 'Failed to fetch hotels' });
-  }
-});
-
-// Issue 8: Get all items, optionally filtered by category.
-app.get('/api/items', async (req, res) => {
-  try {
-    const category = req.query.category;
-    const filter = category ? { category } : {};
-
-    const items = await app.locals.db
-      .collection('items')
-      .find(filter)
-      .toArray();
-
-    res.json(items);
-  } catch (error) {
-    console.error('Error fetching items:', error.message);
-    res.status(500).json({ error: 'Failed to fetch items' });
-  }
-});
-
-// Issue 9: Get one item by its MongoDB ID.
-app.get('/api/items/:id', async (req, res) => {
-  try {
-    const id = req.params.id;
-
-    if (!ObjectId.isValid(id)) {
-      return res.status(400).json({
-        error: 'Invalid item ID'
-      });
+        res.json({
+            highScore: highScore ? highScore.score : 0
+        });
+    } catch (error) {
+        console.error('Error fetching high score:', error.message);
+        res.status(500).json({
+            error: 'Failed to fetch high score'
+        });
     }
-
-    const item = await app.locals.db
-      .collection('items')
-      .findOne({ _id: new ObjectId(id) });
-
-    if (!item) {
-      return res.status(404).json({
-        error: 'Item not found'
-      });
-    }
-
-    res.json(item);
-  } catch (error) {
-    console.error('Error fetching item:', error.message);
-    res.status(500).json({ error: 'Failed to fetch item' });
-  }
 });
 
-// Issue 11: Create a new item.
-app.post('/api/items', async (req, res) => {
-  try {
-    const result = await app.locals.db
-      .collection('items')
-      .insertOne(req.body);
+// Update the high score only when a new score is higher.
+app.post('/api/highscore', async (req, res) => {
+    try {
+        const score = req.body.score;
 
-    res.status(201).json({
-      message: 'Item created successfully',
-      _id: result.insertedId,
-      ...req.body
-    });
-  } catch (error) {
-    console.error('Error creating item:', error.message);
-    res.status(500).json({ error: 'Failed to create item' });
-  }
+        if (!Number.isInteger(score) || score < 0) {
+            return res.status(400).json({
+                error: 'Score must be a non-negative integer'
+            });
+        }
+
+        const result = await app.locals.db
+            .collection('highscores')
+            .updateOne(
+                {
+                    _id: 'marvel-higher-lower',
+                    score: { $lt: score }
+                },
+                {
+                    $set: { score }
+                }
+            );
+
+        if (result.matchedCount === 0 && result.upsertedCount === 0) {
+            const existing = await app.locals.db
+                .collection('highscores')
+                .findOne({ _id: 'marvel-higher-lower' });
+
+            if (!existing) {
+                await app.locals.db
+                    .collection('highscores')
+                    .insertOne({
+                        _id: 'marvel-higher-lower',
+                        score
+                    });
+            }
+        }
+
+        const highScore = await app.locals.db
+            .collection('highscores')
+            .findOne({ _id: 'marvel-higher-lower' });
+
+        res.json({
+            highScore: highScore.score
+        });
+    } catch (error) {
+        console.error('Error updating high score:', error.message);
+        res.status(500).json({
+            error: 'Failed to update high score'
+        });
+    }
 });
 
 async function startServer() {
-  try {
-    await connectMongo();
+    try {
+        await connectMongo();
 
-    app.listen(3000, () => {
-      console.log('Server is running on http://localhost:3000');
-    });
-  } catch (error) {
-    console.error('MongoDB connection failed:', error.message);
-    await client.close().catch(() => {});
-    process.exit(1);
-  }
+        app.listen(3000, () => {
+            console.log('Server is running on http://localhost:3000');
+        });
+    } catch (error) {
+        console.error('MongoDB connection failed:', error.message);
+        await client.close().catch(() => {});
+        process.exit(1);
+    }
 }
-
-// Issue 12: Update an item's category.
-app.patch('/api/items/:id', async (req, res) => {
-  try {
-    const id = req.params.id;
-
-    if (!ObjectId.isValid(id)) {
-      return res.status(400).json({
-        error: 'Invalid item ID'
-      });
-    }
-
-    const changes = req.body;
-
-    const result = await app.locals.db
-      .collection('items')
-      .updateOne(
-        { _id: new ObjectId(id) },
-        { $set: changes }
-      );
-
-    if (result.matchedCount === 0) {
-      return res.status(404).json({
-        error: 'Item not found'
-      });
-    }
-
-    res.json(result);
-  } catch (error) {
-    console.error('Error updating item:', error.message);
-    res.status(500).json({
-      error: 'Failed to update item'
-    });
-  }
-
-  
-});
-
-
- // Issue 13: Delete an item by ID.
-app.delete('/api/items/:id', async (req, res) => {
-  try {
-    const id = req.params.id;
-
-    if (!ObjectId.isValid(id)) {
-      return res.status(400).json({
-        error: 'Invalid item ID'
-      });
-    }
-
-    const result = await app.locals.db
-      .collection('items')
-      .deleteOne({
-        _id: new ObjectId(id)
-      });
-
-    if (result.deletedCount === 0) {
-      return res.status(404).json({
-        error: 'Item not found'
-      });
-    }
-
-    res.json(result);
-  } catch (error) {
-    console.error('Error deleting item:', error.message);
-    res.status(500).json({
-      error: 'Failed to delete item'
-    });
-  }
-});
-
 
 startServer();

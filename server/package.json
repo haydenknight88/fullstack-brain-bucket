@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/haydenknight88/fullstack-brain-bucket.git"
   },
-  "keywords": [], 
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/haydenknight88/fullstack-brain-bucket#readme",
   "dependencies": {
-    "dotenv": "^18.0.4",
+    "dotenv": "^18.0.10",
     "express": "^5.2.1",
     "mongodb": "^7.7.0",
     "nodemon": "^3.1.14"
