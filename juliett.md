@@ -1,6 +1,6 @@
 # Juliett
 
 ### Demo Links
-| requirement | evidence |
+| App | Link |
 |---|---|
 | Marvel Higher or Lower | [Link](https://hayden.barrycumbie.com) |
