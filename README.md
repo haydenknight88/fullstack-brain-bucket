@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-HOTEL README
 
 # APP NAME
-> US State Prototype
+> Marvel Higher or Lower
 
 ### authorship + version
 
