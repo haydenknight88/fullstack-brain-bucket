@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel Higher or Lower</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/marvel.css">
+</head>
+
+<body class="intro-screen">
+    <main class="container text-center py-5">
+
+        <h1>Marvel Higher or Lower</h1>
+        <p>Guess whether the next Marvel character has a higher or lower power level.</p>
+
+       
+<div class="row justify-content-center align-items-center mt-5">
+
+    <div class="col-md-5 character-card">
+        <img id="currentCharacterImage" class="character-image" src="" alt="Current character">
+
+        <h2 id="currentCharacterName">Starting Character</h2>
+
+        <p>Power Level: <span id="currentPowerLevel">---</span></p>
+    </div>
+
+   <div class="col-md-1 vs-container">
+    <img src="images/VS/vs.jpg" alt="Versus" class="vs-image">
+   </div>
+
+    <div class="col-md-5 character-card">
+        <img id="nextCharacterImage" class="character-image" src="" alt="Next character">
+
+        <h2 id="nextCharacterName">Next Character</h2>
+
+        <p>Power Level: <span id="nextPowerLevel">?</span></p>
+    </div>
+
+</div>
+
+       <div class="mt-4">
+    <h3>Score: <span id="score">0</span></h3>
+    <h4>High Score: <span id="highScore">0</span></h4>
+
+            <button id="higherButton" class="btn btn-primary btn-lg m-2">
+                Higher
+            </button>
+
+            <button id="lowerButton" class="btn btn-primary btn-lg m-2">
+                Lower
+            </button>
+        </div>
+
+        <p id="gameMessage" class="mt-4"></p>
+<div id="gameOverScreen" class="game-over-screen">
+    <h2>GAME OVER</h2>
+    <p>Your Final Score</p>
+    <h3 id="finalScore">0</h3>
+    <button id="playAgainButton" class="btn btn-danger btn-lg">
+        Play Again
+    </button>
+</div>
+<div class="infinity-stones">
+    <h4>Infinity Stones</h4>
+
+    <div class="stone-container">
+        <button class="stone locked" id="spaceStone" title="Space Stone">
+            <img src="images/gems/space.jpg" alt="Space Stone">
+        </button>
+
+        <button class="stone locked" id="mindStone" title="Mind Stone">
+            <img src="images/gems/mind.jpg" alt="Mind Stone">
+        </button>
+
+        <button class="stone locked" id="realityStone" title="Reality Stone">
+            <img src="images/gems/reality.jpg" alt="Reality Stone">
+        </button>
+
+        <button class="stone locked" id="powerStone" title="Power Stone">
+            <img src="images/gems/power.jpg" alt="Power Stone">
+        </button>
+
+        <button class="stone locked" id="timeStone" title="Time Stone">
+            <img src="images/gems/time.jpg" alt="Time Stone">
+        </button>
+
+        <button class="stone locked" id="soulStone" title="Soul Stone">
+            <img src="images/gems/soul.jpg" alt="Soul Stone">
+        </button>
+    </div>
+</div>
+        <button id="restartButton" class="btn btn-success btn-lg mt-3">
+            Start Game
+        </button>
+
+    </main>
+
+    <script src="scripts/marvel.js"></script>
+
+</body>
+</html>
